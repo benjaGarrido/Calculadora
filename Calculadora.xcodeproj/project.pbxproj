@@ -12,6 +12,7 @@
 		C1BAEDAC1DFC69DC0065692A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BAEDAA1DFC69DC0065692A /* Main.storyboard */; };
 		C1BAEDAE1DFC69DC0065692A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BAEDAD1DFC69DC0065692A /* Assets.xcassets */; };
 		C1BAEDB11DFC69DC0065692A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BAEDAF1DFC69DC0065692A /* LaunchScreen.storyboard */; };
+		C1BAEDB91DFC6A2F0065692A /* WorkSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1BAEDB81DFC6A2F0065692A /* WorkSans-ExtraLight.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C1BAEDAD1DFC69DC0065692A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1BAEDB01DFC69DC0065692A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1BAEDB21DFC69DC0065692A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1BAEDB81DFC6A2F0065692A /* WorkSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraLight.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BAEDA61DFC69DC0065692A /* AppDelegate.swift */,
+				C1BAEDB81DFC6A2F0065692A /* WorkSans-ExtraLight.ttf */,
 				C1BAEDA81DFC69DC0065692A /* ViewController.swift */,
 				C1BAEDAA1DFC69DC0065692A /* Main.storyboard */,
 				C1BAEDAD1DFC69DC0065692A /* Assets.xcassets */,
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BAEDB91DFC6A2F0065692A /* WorkSans-ExtraLight.ttf in Resources */,
 				C1BAEDB11DFC69DC0065692A /* LaunchScreen.storyboard in Resources */,
 				C1BAEDAE1DFC69DC0065692A /* Assets.xcassets in Resources */,
 				C1BAEDAC1DFC69DC0065692A /* Main.storyboard in Resources */,
