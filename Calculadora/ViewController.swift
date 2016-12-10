@@ -119,7 +119,31 @@ class ViewController: UIViewController {
     }
     
     func applyOperation() {
-        
+        if result != nil {
+            if var newResult = result, let prevOp = previousOperation, let prevResult = previousResult, let dblPreviousResult = Double(prevResult), let dblResult = Double(newResult) {
+                switch prevOp {
+                case .Add:
+                    newResult = String(dblPreviousResult + dblResult)
+                case .Substract:
+                    newResult = String(dblPreviousResult - dblResult)
+                case .Multiply:
+                    newResult = String(dblPreviousResult * dblResult)
+                case .Divide:
+                    if dblResult != 0 {
+                        newResult = String(dblPreviousResult / dblResult)
+                    } else {
+                        newResult = "0"
+                    }
+                }
+                result = newResult
+                previousResult = nil
+                previousOperation = nil
+            } else {
+                previousOperation = currentOperation
+                previousResult = result
+                result = nil
+            }
+        }
     }
     
     func resetIcons() {
