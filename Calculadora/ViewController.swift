@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         }
     }
     var previousResult : String?
+    
     var currentOperation : CalcOp? {
         willSet {
             resetIcons()
@@ -56,11 +57,68 @@ class ViewController: UIViewController {
     var previousOperation : CalcOp?
     
     @IBAction func buttonPressed(_ sender: UIButton) {
+        let key = sender.titleLabel!.text!
+        switch key {
+        case "1","2","3","4","5","6","7","8","9","0":
+            if var newResult = result {
+                newResult.append(key)
+                result = newResult
+            } else {
+                result = key
+            }
+        case ",":
+            if var newResult = result {
+                if newResult.range(of: ",") == nil {
+                    newResult.append(".")
+                    result = newResult
+                }
+            }
+        case "+":
+            currentOperation = .Add
+            applyOperation()
+        case "-":
+            currentOperation = .Substract
+            applyOperation()
+        //case "":
+            //currentOperation = .Multiply
+            //applyOperation()
+        //case "":
+            //currentOperation = .Divide
+            //applyOperation()
+        case "=":
+            applyOperation()
+            currentOperation = nil
+            previousOperation = nil
+            previousResult = nil
+        case "AC":
+            resetCalculator()
+        //case "":
+            /*if var newResult = result, let currentValue = Double(newResult) {
+                newResult = String(-currentValue)
+                result = newResult
+            }*/
+        case "%":
+            if var newResult = result, let currentValue = Double(newResult) {
+                newResult = String(currentValue/100)
+                result = newResult
+            }
+        default:
+            print("Se ha pulsado una opción inexistente")
+        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resetCalculator()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.maximumFractionDigits = 6
+        currencyFormatter.numberStyle = .decimal
+        currencyFormatter.locale = Locale.current
+    }
+    
+    func applyOperation() {
         
     }
     
@@ -69,6 +127,15 @@ class ViewController: UIViewController {
         icoResta.image = UIImage(named: CalcOp.Substract.rawValue)
         icoMultiplica.image = UIImage(named: CalcOp.Multiply.rawValue)
         icoDividir.image = UIImage(named: CalcOp.Divide.rawValue)
+    }
+    
+    func resetCalculator() {
+        resetIcons()
+        result = nil
+        previousResult = nil
+        currentOperation = nil
+        previousOperation = nil
+        lblResult.text = "0"
     }
     
     override var prefersStatusBarHidden: Bool {
